@@ -1,0 +1,31 @@
+default_language_version:
+  python: python3.8
+repos:
+- hooks:
+  - args:
+    - --remove-all-unused-imports
+    - --in-place
+    id: autoflake
+  repo: https://github.com/humitos/mirrors-autoflake
+  rev: v1.1
+- hooks:
+  - id: isort
+  repo: https://github.com/timothycrosley/isort
+  rev: 5.6.4
+- hooks:
+  - id: black
+  repo: https://github.com/psf/black
+  rev: 20.8b1
+- hooks:
+  - id: populate-mypy-pre-commit
+  repo: https://github.com/cognitedata/populate-mypy-pre-commit
+  rev: v2.0
+- hooks:
+  - additional_dependencies: []
+    id: mypy
+  repo: https://github.com/pre-commit/mirrors-mypy
+  rev: v0.790
+- hooks:
+  - id: flake8
+  repo: https://gitlab.com/pycqa/flake8
+  rev: 3.8.4

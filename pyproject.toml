@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "advent-of-code-2020"
+version = "0.1.0"
+description = "Advent of Code 2020"
+authors = ["Vegard Stikbakke <vegard.stikbakke@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.black]
+line-length = 120
+target_version = ['py38']
+include = '\.py$'
+
+[tool.isort]
+line_length = 120
+multi_line_output = 3
+include_trailing_comma = true
+skip_glob = '^((?!py$).)*$'    # isort all Python files
+float_to_top = true
+known_third_party = []
