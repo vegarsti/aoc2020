@@ -2,14 +2,14 @@ with open("input/05.txt", "r") as f:
     boarding_passes = f.readlines()
 
 
-def to_number(s: str, zero: str, one: str) -> int:
-    binary_s = s.replace(zero, "0").replace(one, "1")
+def binary_representation_to_number(s: str) -> int:
+    binary_s = s.replace("F", "0").replace("L", "0").replace("B", "1").replace("R", "1")
     return int(binary_s, base=2)
 
 
 def seat_id(boarding_pass: str) -> int:
-    row = to_number(boarding_pass[:7], zero="F", one="B")
-    column = to_number(boarding_pass[7:], zero="L", one="R")
+    row = binary_representation_to_number(boarding_pass[:7])
+    column = binary_representation_to_number(boarding_pass[7:])
     return row * 8 + column
 
 
