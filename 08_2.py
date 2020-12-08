@@ -6,15 +6,13 @@ for instruction, _ in enumerate(lines):
     while i not in seen and i < len(lines):
         seen.add(i)
         operation, number = lines[i].split()
-        sign = 2 * (number[0] == "+") - 1
-        value = int(number[1:])
         if i == instruction and operation in {"nop", "jmp"}:
             operation = {"nop": "jmp", "jmp": "nop"}[operation]
         if operation == "jmp":
-            i += sign * value
+            i += int(number)
             continue
         if operation == "acc":
-            acc += sign * value
+            acc += int(number)
         i += 1
     if i == len(lines):
         print(acc)

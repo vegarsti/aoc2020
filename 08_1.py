@@ -5,12 +5,10 @@ seen, acc, i = set(), 0, 0
 while i not in seen:
     seen.add(i)
     operation, number = lines[i].split()
-    sign = 2 * (number[0] == "+") - 1
-    value = int(number[1:])
     if operation == "jmp":
-        i += sign * value
+        i += int(number)
         continue
     if operation == "acc":
-        acc += sign * value
+        acc += int(number)
     i += 1
 print(acc)
