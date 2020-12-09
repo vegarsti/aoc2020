@@ -16,3 +16,4 @@ for instruction, _ in enumerate(lines):
         i += 1
     if i == len(lines):
         print(acc)
+        break
