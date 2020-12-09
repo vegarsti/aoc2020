@@ -1,6 +1,6 @@
 from typing import List
 
-with open("input/06_test.txt", "r") as f:
+with open("input/06.txt", "r") as f:
     groups = [group.split("\n") for group in f.read().split("\n\n")]
 
 
